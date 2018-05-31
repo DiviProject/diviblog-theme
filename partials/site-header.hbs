@@ -1,16 +1,77 @@
-<header
-  {{#if @blog.cover_image}}
-    style="background-image: url({{@blog.cover_image}})"
-  {{/if}}>
-  {{#if @blog.logo}}
-    <a href="{{@blog.url}}">
-      <img src="{{@blog.logo}}" alt="{{t "Logo"}}">
-    </a>
-  {{/if}}
-  <h1>
-    {{@blog.title}}
-  </h1>
-  <p>
-    {{@blog.description}}
-  </p>
+<!-- Header -->
+<header class="header header-fixed header-fixed-on-mobile header-transparent nav-dark" data-bkg-threshold="10" data-compact-threshold="10">
+  <div class="header-inner">
+    <div class="row nav-bar">
+      <div class="column width-12 nav-bar-inner">
+        <div class="logo">
+          <div class="logo-inner">
+            <a href="https://diviproject.org"><img src="../assets/images/logo-dark.png" alt="Divi Logo" /></a>
+            <a href="https://diviproject.org"><img src="../assets/images/logo.png" alt="Divi Logo" /></a>
+          </div>
+        </div>
+        <nav class="navigation nav-block secondary-navigation nav-right">
+          <ul>
+            <li>
+              <!-- Button -->
+              <div class="v-align-middle">
+                  <a href="#" class="button medium bkg-theme border-hover-grey-ultralight color-white color-hover-grey mb-60">
+                      
+                      Buy Divi
+                    </a>
+              </div>
+            </li>
+            <li class="aux-navigation hide">
+              <!-- Aux Navigation -->
+              <a href="#" class="navigation-show overlay-nav-show nav-icon">
+                <span class="icon-menu"></span>
+              </a>
+            </li>
+          </ul>
+        </nav>
+        <nav class="navigation nav-block primary-navigation nav-right">
+          <ul>
+            <li class="current">
+              <a href="#home" data-offset="0" class="scroll-link">Home</a>
+            </li>
+            <li>
+              <a href="#features" data-offset="-60" class="scroll-link">Features</a>
+            </li>
+            <li>
+              <a href="#devices" data-offset="-60" class="scroll-link">Download</a>
+            </li>
+            <li>
+              <a href="#whitepaper" data-offset="-60" class="scroll-link">White Paper</a>
+            </li>
+            <li>
+              <a href="#team" data-offset="-60" class="scroll-link">Team</a>
+            </li>
+            <li>
+              <a href="#blog" data-offset="-60" class="scroll-link">Blog</a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </div>
+  </div>
 </header>
+<!-- Header End -->
+
+<!-- Intro Title Section 2 -->
+<div class="section-block intro-title-1 small bkg-grey-ultralight">
+  <div class="row">
+    <div class="column width-12">
+      <div class="title-container">
+        <div class="title-container-inner">
+          <h1 class="inline">{{@blog.title}}</h1>
+          <ul class="breadcrumb">
+            <li>
+              {{@blog.description}}
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+  <!-- Intro Title Section 2 End -->
+			

@@ -6,32 +6,73 @@
   <main role="main">
     <article class="{{post_class}}">
       <header>
-        <h1>
-          {{{title}}}
-        </h1>
-        <time datetime="{{date format="YYYY-MM-DD"}}">
-          {{date format='DD MMM YYYY'}}
-        </time>
+        <!-- Intro Title Section 2 -->
+				<div class="section-block intro-title-2 intro-title-2-4">
+					<div class="row">
+						<div class="column width-12">
+							<div class="title-container">
+								<div class="title-container-inner">
+									<h1 class="inline no-margin-bottom">{{{title}}}</h1>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<!-- Intro Title Section 2 End -->
+
+        <div class="section-block clearfix no-padding">
+					<div class="post-info boxed">
+						<div class="row">
+							<div class="column width-12">
+								<span class="post-date">
+                  <time datetime="{{date format="YYYY-MM-DD"}}">
+                    {{date format='DD MMM YYYY'}}
+                  </time>
+                </span>/<span class="post-autor">By <a href="#">{{author.name}}</a></span>/<span class="post-love"><a href="#" class="post-love"><span class="icon-heart"></span>768</a></span>	
+							</div>
+						</div>
+					</div>
+
+          <div class="row">
+            <div class="column width-9 content-inner blog-single-post">
+              <article class="post">
+								
+								<div class="post-media">
+									<div class="video-container">
+										{{#if feature_image}}
+                      <figure>
+                        <img src="{{feature_image}}">
+                      </figure>
+                    {{/if}}
+									</div>
+								</div>
+	
+								<div class="post-content">
+									{{content}}
+                </div>
+							</article>
+            </div>
+          </div>
+
+
+
+
+
+
+
+
+
+        
         {{tags prefix=(t " on ") separator=" | "}}
-        {{#if feature_image}}
-          <figure>
-            <img src="{{feature_image}}">
-          </figure>
-        {{/if}}
+        
       </header>
-      <section>
-        {{content}}
-      </section>
-      <footer>
+      {{!-- <footer>
         <section>
           {{#if author.profile_image}}
             <figure>
               <img src="{{author.profile_image}}" alt="{{{t '{name}’s Picture' name=name }}}">
             </figure>
           {{/if}}
-          <h4>
-            {{author.name}}
-          </h4>
           <p>
             {{author.bio}}
           </p>
@@ -62,7 +103,7 @@
             {{t "Facebook"}}
           </a>
         </section>
-      </footer>
+      </footer> --}}
     </article>
   </main>
 {{/post}}
