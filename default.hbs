@@ -119,6 +119,10 @@
     </div>
   </div>
   {{ghost_foot}}
+  <script>
+    var max_pages = parseInt('{{pagination.pages}}');
+  </script>
+  <script type="text/javascript" src="{{asset "js/infinitescroll.js"}}"></script>
   <script type="text/javascript" src="{{asset "js/master.min.js"}}"></script>
   <script type="text/javascript" src="{{asset "js/master.js"}}"></script>
   <script type="text/javascript" src="{{asset "js/min.js"}}"></script>
