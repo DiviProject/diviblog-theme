@@ -1,4 +1,3 @@
-{{!< default}}
 <!-- Overlay Navigation Menu -->
 <div class="overlay-navigation-wrapper enter-right one-page-nav" data-no-scrollbar data-animation="slide-in">
   <div class="overlay-navigation-scroll-pane">
@@ -57,8 +56,8 @@
       <div class="column width-12 nav-bar-inner">
         <div class="logo">
           <div class="logo-inner">
-            <a href="https://diviproject.org"><img src="../../assets/images/logo-dark.png" alt="Divi Logo" /></a>
-            <a href="https://diviproject.org"><img src="../../assets/images/logo.png" alt="Divi Logo" /></a>
+            <a href="https://diviproject.org"><img src="../assets/images/logo-dark.png" alt="Divi Logo" /></a>
+            <a href="https://diviproject.org"><img src="../assets/images/logo.png" alt="Divi Logo" /></a>
           </div>
         </div>
         <nav class="navigation nav-block secondary-navigation nav-right">
@@ -107,60 +106,3 @@
   </div>
 </header>
 <!-- Header End -->
-
-{{#author}}
-  
-    <div class="section-block mt-60">
-      <div class="row">
-        <div class="column width-12">
-          <header
-          {{#if cover_image}}
-            style="background-image: url({{cover_image}}); background-repeat: no-repeat; background-size: auto;"
-          {{else if @blog.cover_image}}
-            style="background-image: url({{@blog.cover_image}}; background-repeat: no-repeat; background-size: auto;"
-          {{/if}}>
-          {{#if profile_image}}
-            <div style="max-height: 10rem; max-width: 100px; border-radius: 2%">
-                <img src="{{profile_image}}" alt="{{{t '{name}’s Picture' name=name }}}">
-            </div>
-          {{/if}}
-
-          <h1 class="color-white" style="text-shadow: 1px 1px #4A4A4A">
-            {{name}}
-          </h1>
-          <p class="color-white" style="text-shadow: 1px 1px #4A4A4A">
-            {{bio}}
-          </p>
-          
-          </header>
-          <ul class="list-group">
-            <li>
-              {{#if location}}
-                <span class="icon-location-pin"></span>{{location}}
-              {{/if}}
-            </li>
-            <li>
-              {{#if website}}
-                <a href="{{website}}">
-                  <span class="icon-network"></span> {{website}}
-                </a>
-              {{/if}}
-            </li>
-            <li>
-              {{plural ../pagination.total empty=(t "No posts") singular=(t "1 post") plural=(t "% posts")}}
-            </li>
-            </ul>
-        </div>
-      </div>
-    </div>
-          
-       
-            
-            
-    
-  
-{{/author}}
-
-<main role="main">
-  {{> "loop"}}
-</main>

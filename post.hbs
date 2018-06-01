@@ -1,68 +1,115 @@
 {{!< default}}
 
-{{> "site-header"}}
+{{> "navbar"}}
 
 {{#post}}
   <main role="main">
     <article class="{{post_class}}">
       <header>
-        <h1>
-          {{{title}}}
-        </h1>
-        <time datetime="{{date format="YYYY-MM-DD"}}">
-          {{date format='DD MMM YYYY'}}
-        </time>
-        {{tags prefix=(t " on ") separator=" | "}}
+        <!-- Intro Title Section 2 -->
+				<div class="section-block intro-title-2 intro-title-2-4" 
         {{#if feature_image}}
-          <figure>
-            <img src="{{feature_image}}">
-          </figure>
+          style="background-image: url({{feature_image}})"
         {{/if}}
+        >
+					<div class="row">
+						<div class="column width-12">
+							<div class="title-container">
+								<div class="title-container-inner">
+									<h1 class="inline no-margin-bottom" style="color: white!important; text-shadow: 1px 1px #4A4A4A">{{{title}}}</h1>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<!-- Intro Title Section 2 End -->
+
+        <div class="section-block clearfix no-padding">
+					<div class="post-info boxed">
+						<div class="row">
+							<div class="column width-12">
+								<span class="post-date">
+                  <time datetime="{{date format="YYYY-MM-DD"}}">
+                    {{date format='DD MMM YYYY'}}
+                  </time>
+                </span>/<span class="post-author">By 
+                  {{#author}}
+                    <a href={{url}}>{{name}}</a></span>
+                  {{/author}}
+                  /<span class="post-love"><a href="https://blog.diviproject.org" class="post-love"><span class="icon-home"></span>Blog home</a></span>	
+							</div>
+						</div>
+					</div>
+
+          <div class="row">
+            <div class="column width-9 content-inner blog-single-post">
+              <article class="post">
+								
+								{{!-- <div class="post-media">
+									<div class="video-container">
+										{{#if feature_image}}
+                      <figure>
+                        <img src="{{feature_image}}">
+                      </figure>
+                    {{/if}}
+									</div>
+								</div> --}}
+	
+								<div class="post-content">
+									{{content}}
+                </div>
+							</article>
+            </div>
+            <aside class="column width-3 sidebar right">
+              <div class="sidebar-inner">
+                <div class="widget">
+                  <div class="box bkg-grey-ultralight mb-50">
+                    <h3 class="widget-title">About</h3>
+                    <p>Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate.<p>
+                  </div>
+                </div>
+                <div class="widget">
+                  <h3 class="widget-title">Related Categories</h3>
+                  <ul>
+                    {{#foreach tags}}
+                      <li><a href="{{url}}" title={{name}}>{{name}}</a></li>
+                    {{/foreach}}
+                  </ul>
+                </div>
+
+                {{> "recent-posts"}}
+
+              </div>
+            </aside>
+          </div>
       </header>
-      <section>
-        {{content}}
-      </section>
-      <footer>
-        <section>
-          {{#if author.profile_image}}
-            <figure>
-              <img src="{{author.profile_image}}" alt="{{{t '{name}’s Picture' name=name }}}">
-            </figure>
-          {{/if}}
-          <h4>
-            {{author.name}}
-          </h4>
-          <p>
-            {{author.bio}}
-          </p>
-          <ul>
-            {{#if author.location}}
-              <li>
-                {{author.location}}
-              </li>
-            {{/if}}
-            {{#if author.website}}
-              <li>
-                <a href="{{author.website}}">
-                  {{author.website}}
-                </a>
-              </li>
-            {{/if}}
-          </ul>
-        </section>
-        <section>
-          {{t "Share this post"}}
-          <a href="https://twitter.com/share?text={{encode title}}&amp;url={{url absolute="true"}}"
-            onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;">
-            {{t "Twitter"}}
-          </a>
-          {{t " or "}}
-          <a href="https://www.facebook.com/sharer/sharer.php?u={{url absolute="true"}}"
-            onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;">
-            {{t "Facebook"}}
-          </a>
-        </section>
-      </footer>
+      
+      {{> "post-pagination"}}
+      
     </article>
   </main>
 {{/post}}
+
+
+<!-- Sidebar -->
+{{!-- <aside class="column width-3 sidebar right">
+  <div class="sidebar-inner">
+    <div class="widget">
+      <h3 class="widget-title">Find Something</h3>
+      <div class="search-form-container site-search">
+        <form action="#" method="get" novalidate>
+          <div class="row">
+            <div class="column width-12">
+              <div class="field-wrapper">
+                <input type="text" name="search" class="form-search form-element" placeholder="type &amp; hit enter...">
+                <span class="border"></span>
+              </div>
+            </div>
+          </div>
+        </form>
+        <div class="form-response"></div>
+      </div>
+    </div>
+  </div>
+</aside> --}}
+<!-- Sidebar End -->

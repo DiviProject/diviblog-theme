@@ -4,19 +4,17 @@
     <div class="row">
       <div class="column width-12">
         <ul>
-          
+          {{#next_post}}
             <li>
-                {{#if prev}}
               <a class="older-posts pagination-next icon-right-open" href="{{url}}">
                 &larr;
               </a>
-                {{else}}
-                <li></li>
-                {{/if}}
             </li>
-            
-          {{!-- <span class="page-number">Page {{page}} of {{pages}}</span> --}}
-          {{#if next}}
+            {{else}}
+            <li></li>
+          {{/next_post}}
+          
+          {{#prev_post}}
             <li>
               <a class="newer-posts pagination-previous icon-left-open" href="{{url}}">
                 &rarr;
@@ -24,7 +22,7 @@
             </li>
             {{else}}
             <li></li>
-          {{/if}}
+          {{/prev_post}}
         </ul>
       </div>
     </div>

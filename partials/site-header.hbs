@@ -1,16 +1,19 @@
-<header
-  {{#if @blog.cover_image}}
-    style="background-image: url({{@blog.cover_image}})"
-  {{/if}}>
-  {{#if @blog.logo}}
-    <a href="{{@blog.url}}">
-      <img src="{{@blog.logo}}" alt="{{t "Logo"}}">
-    </a>
-  {{/if}}
-  <h1>
-    {{@blog.title}}
-  </h1>
-  <p>
-    {{@blog.description}}
-  </p>
-</header>
+<!-- Intro Title Section 2 -->
+<div class="section-block intro-title-1 small bkg-grey-ultralight">
+  <div class="row">
+    <div class="column width-12">
+      <div class="title-container">
+        <div class="title-container-inner">
+          <h1 class="inline">{{@blog.title}}</h1>
+          <ul class="breadcrumb">
+            <li>
+              {{@blog.description}}
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+  <!-- Intro Title Section 2 End -->
+			

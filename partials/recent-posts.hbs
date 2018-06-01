@@ -1,0 +1,45 @@
+<div class="widget">
+    <h3 class="widget-title">Read Next</h3>
+    <ul class="list-group">
+        
+        {{#next_post in="author"}}
+        <li>
+            <span class="post-info">
+                <span class="post-date">
+                    <time datetime="{{date format="YYYY-MM-DD"}}">
+                        {{date format='DD MMM YYYY'}}
+                    </time>
+                </span>
+            </span>
+            <a href={{url}}>{{title}}</a>
+        </li>
+        {{/next_post}}
+
+        {{#prev_post}}
+        <li>
+            <span class="post-info">
+                <span class="post-date">
+                    <time datetime="{{date format="YYYY-MM-DD"}}">
+                        {{date format='DD MMM YYYY'}}
+                    </time>
+                </span>
+            </span>
+            <a href={{url}}>{{title}}</a>
+        </li>
+        {{/prev_post}}
+        
+        {{#next_post}}
+        <li>
+            <span class="post-info">
+                <span class="post-date">
+                    <time datetime="{{date format="YYYY-MM-DD"}}">
+                        {{date format='DD MMM YYYY'}}
+                    </time>
+                </span>
+            </span>
+            <a href="{{url}}">{{title}}</a>
+        </li>
+        {{/next_post}}
+        
+    </ul>
+</div>
