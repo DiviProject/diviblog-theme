@@ -1,7 +1,6 @@
-# Ghost Theme Template
+# Divi Blog Ghost Theme Template
 
-A project scaffold for building [Ghost](http://github.com/tryghost/ghost/)
-themes using Gulp, LibSass, & Autoprefixer.
+The official theme for the [Divi Project Blog](https://blog.diviproject.org).
 
 ## Features
 
@@ -10,6 +9,30 @@ themes using Gulp, LibSass, & Autoprefixer.
 - Bourbon and Neat
 - The amazing power of Autoprefixer
 - JSHint with Stylish
+
+## Pre-requisites
+
+- Ghost installation (local recommended for development)
+- Gulp
+- Npm
+- NodeJS
+
+## Developing
+
+Clone the repository into your local Ghost theme directory. 
+
+```
+cd diviblog-theme
+npm i
+gulp
+```
+This will install all dependencies and start gulp, which will watch and test new changes made to CSS or JS files.
+
+To zip 
+```
+gulp deploy
+```
+This will create a zip file that can be uploaded to the Ghost admin.
 
 ## Gulp Tasks
 
