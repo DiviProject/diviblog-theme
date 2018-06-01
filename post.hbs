@@ -7,12 +7,16 @@
     <article class="{{post_class}}">
       <header>
         <!-- Intro Title Section 2 -->
-				<div class="section-block intro-title-2 intro-title-2-4">
+				<div class="section-block intro-title-2 intro-title-2-4" 
+        {{#if feature_image}}
+          style="background-image: url({{feature_image}})"
+        {{/if}}
+        >
 					<div class="row">
 						<div class="column width-12">
 							<div class="title-container">
 								<div class="title-container-inner">
-									<h1 class="inline no-margin-bottom">{{{title}}}</h1>
+									<h1 class="inline no-margin-bottom" style="color: white!important; text-shadow: 1px 1px #4A4A4A">{{{title}}}</h1>
 								</div>
 							</div>
 						</div>
@@ -28,7 +32,11 @@
                   <time datetime="{{date format="YYYY-MM-DD"}}">
                     {{date format='DD MMM YYYY'}}
                   </time>
-                </span>/<span class="post-autor">By <a href="#">{{author.name}}</a></span>/<span class="post-love"><a href="#" class="post-love"><span class="icon-heart"></span>768</a></span>	
+                </span>/<span class="post-author">By 
+                  {{#author}}
+                    <a href={{url}}>{{name}}</a></span>
+                  {{/author}}
+                  /<span class="post-love"><a href="https://blog.diviproject.org" class="post-love"><span class="icon-home"></span>Blog home</a></span>	
 							</div>
 						</div>
 					</div>
@@ -37,7 +45,7 @@
             <div class="column width-9 content-inner blog-single-post">
               <article class="post">
 								
-								<div class="post-media">
+								{{!-- <div class="post-media">
 									<div class="video-container">
 										{{#if feature_image}}
                       <figure>
@@ -45,7 +53,7 @@
                       </figure>
                     {{/if}}
 									</div>
-								</div>
+								</div> --}}
 	
 								<div class="post-content">
 									{{content}}

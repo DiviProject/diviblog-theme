@@ -1,41 +1,164 @@
 {{!< default}}
+<!-- Overlay Navigation Menu -->
+<div class="overlay-navigation-wrapper enter-right one-page-nav" data-no-scrollbar data-animation="slide-in">
+  <div class="overlay-navigation-scroll-pane">
+    <div class="overlay-navigation-inner">
+      <div class="v-align-middle">
+        <div class="overlay-navigation-header row collapse full-width">
+          <div class="column width-12">
+            <div class="navigation-hide overlay-nav-hide">
+              <a href="#">
+                <span class="icon-cancel"></span>
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="row collapse full-width">
+          <div class="column width-12">
+            <nav class="overlay-navigation nav-block center">
+              <ul>
+                <li class="current">
+                  <a href="https://diviproject.org" data-offset="0" class="scroll-link">Home</a>
+                </li>
+                <li>
+                  <a href="https://diviproject.org/#features" data-offset="-60" class="scroll-link">Features</a>
+                </li>
+                <li>
+                  <a href="https://diviproject.org/#download" data-offset="-60" class="scroll-link">Download</a>
+                </li>
+                <li>
+                  <a href="https://diviproject.org/#whitepaper" data-offset="-60" class="scroll-link">White Paper</a>
+                </li>
+                <li>
+                  <a href="https://diviproject.org/#team" data-offset="-60" class="scroll-link">Team</a>
+                </li>
+                <li>
+                  <a href="https://blog.diviproject.org/" data-offset="-60" class="scroll-link">Blog</a>
+                </li>
+              </ul>
+            </nav>
+          </div>
+        </div>
+        <div class="overlay-navigation-footer row full-width center">
+          <div class="column width-12 no-padding">
+            <p class="copyright">&copy; 2018 Divi. All Rights Reserved.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+	<!-- Overlay Navigation Menu End -->
+
+<!-- Header -->
+<header class="header header-fixed header-fixed-on-mobile header-transparent nav-dark" data-bkg-threshold="10" data-compact-threshold="10">
+  <div class="header-inner">
+    <div class="row nav-bar">
+      <div class="column width-12 nav-bar-inner">
+        <div class="logo">
+          <div class="logo-inner">
+            <a href="https://diviproject.org"><img src="../../assets/images/logo-dark.png" alt="Divi Logo" /></a>
+            <a href="https://diviproject.org"><img src="../../assets/images/logo.png" alt="Divi Logo" /></a>
+          </div>
+        </div>
+        <nav class="navigation nav-block secondary-navigation nav-right">
+          <ul>
+            <li>
+              <!-- Button -->
+              <div class="v-align-middle">
+                  <a href="https://www.cryptopia.co.nz/Exchange/?market=DIVX_BTC" class="button medium bkg-theme border-hover-grey-ultralight color-white color-hover-grey mb-60">
+                      
+                      Buy Divi
+                    </a>
+              </div>
+            </li>
+            <li class="aux-navigation hide">
+              <!-- Aux Navigation -->
+              <a href="#" class="navigation-show overlay-nav-show nav-icon">
+                <span class="icon-menu"></span>
+              </a>
+            </li>
+          </ul>
+        </nav>
+        <nav class="navigation nav-block primary-navigation nav-right">
+          <ul>
+            <li class="current">
+              <a href="https://diviproject.org" data-offset="0" class="scroll-link">Home</a>
+            </li>
+            <li>
+              <a href="https://diviproject.org/#features" data-offset="-60" class="scroll-link">Features</a>
+            </li>
+            <li>
+              <a href="https://diviproject.org/#download" data-offset="-60" class="scroll-link">Download</a>
+            </li>
+            <li>
+              <a href="https://diviproject.org/#whitepaper" data-offset="-60" class="scroll-link">White Paper</a>
+            </li>
+            <li>
+              <a href="https://diviproject.org/#team" data-offset="-60" class="scroll-link">Team</a>
+            </li>
+            <li>
+              <a href="https://blog.diviproject.org/" data-offset="-60" class="scroll-link">Blog</a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </div>
+  </div>
+</header>
+<!-- Header End -->
 
 {{#author}}
-  <header
-    {{#if cover_image}}
-      style="background-image: url({{cover_image}})"
-    {{else if @blog.cover_image}}
-      style="background-image: url({{@blog.cover_image}}"
-    {{/if}}>
-    {{#if profile_image}}
-      <figure>
-        <img src="{{profile_image}}" alt="{{{t '{name}’s Picture' name=name }}}">
-      </figure>
-    {{/if}}
-    <h1>
-      {{name}}
-    </h1>
-    <p>
-      {{bio}}
-    </p>
-    <ul>
-      <li>
-        {{#if location}}
-          {{location}}
-        {{/if}}
-      </li>
-      <li>
-        {{#if website}}
-          <a href="{{website}}">
-            {{website}}
-          </a>
-        {{/if}}
-      </li>
-      <li>
-        {{plural ../pagination.total empty=(t "No posts") singular=(t "1 post") plural=(t "% posts")}}
-      </li>
-    </ul>
-  </header>
+  
+    <div class="section-block mt-60">
+      <div class="row">
+        <div class="column width-12">
+          <header
+          {{#if cover_image}}
+            style="background-image: url({{cover_image}}); background-repeat: no-repeat; background-size: auto;"
+          {{else if @blog.cover_image}}
+            style="background-image: url({{@blog.cover_image}}; background-repeat: no-repeat; background-size: auto;"
+          {{/if}}>
+          {{#if profile_image}}
+            <div style="max-height: 10rem; max-width: 100px; border-radius: 2%">
+                <img src="{{profile_image}}" alt="{{{t '{name}’s Picture' name=name }}}">
+            </div>
+          {{/if}}
+
+          <h1 class="color-white" style="text-shadow: 1px 1px #4A4A4A">
+            {{name}}
+          </h1>
+          <p class="color-white" style="text-shadow: 1px 1px #4A4A4A">
+            {{bio}}
+          </p>
+          
+          </header>
+          <ul class="list-group">
+            <li>
+              {{#if location}}
+                <span class="icon-location-pin"></span>{{location}}
+              {{/if}}
+            </li>
+            <li>
+              {{#if website}}
+                <a href="{{website}}">
+                  <span class="icon-network"></span> {{website}}
+                </a>
+              {{/if}}
+            </li>
+            <li>
+              {{plural ../pagination.total empty=(t "No posts") singular=(t "1 post") plural=(t "% posts")}}
+            </li>
+            </ul>
+        </div>
+      </div>
+    </div>
+          
+       
+            
+            
+    
+  
 {{/author}}
 
 <main role="main">
